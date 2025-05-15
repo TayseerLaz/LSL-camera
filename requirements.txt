@@ -1,5 +1,5 @@
 fastapi
 uvicorn
 opencv-python
-stensorflow
+tensorflow
 python-multipart
