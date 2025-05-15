@@ -22,8 +22,10 @@ app.add_middleware(
 )
 
 # Serve static frontend if needed
-frontend_path = os.path.join(os.path.dirname(__file__), "../frontend")
-app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
+if os.path.isdir(frontend_path):
+    app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+
 
 @app.get("/")
 def serve_index():
